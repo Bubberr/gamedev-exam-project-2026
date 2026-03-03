@@ -1,0 +1,35 @@
+using UnityEngine;
+using UnityEngine.Events;
+
+public class Health : MonoBehaviour, IAttackable
+{
+    public int maxHealth = 100;
+    private int m_currentHealth;
+
+    public UnityEvent onDeath;
+    public UnityEvent onHurt;
+
+    void Start()
+    {
+        m_currentHealth = maxHealth;
+    }
+
+    public void TakeDamage(int amount)
+    {
+        if (m_currentHealth <= 0) return; // already dead
+
+        m_currentHealth -= amount;
+        onHurt.Invoke();
+
+        if (m_currentHealth <= 0)
+            onDeath.Invoke();
+    }
+
+    public void Heal(int amount)
+    {
+        m_currentHealth = Mathf.Min(m_currentHealth + amount, maxHealth);
+    }
+
+    public int GetHealth() => m_currentHealth;
+    public float GetHealthPercent() => (float)m_currentHealth / maxHealth;
+}
