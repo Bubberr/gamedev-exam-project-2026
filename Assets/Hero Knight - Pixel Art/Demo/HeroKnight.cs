@@ -25,6 +25,8 @@ public class HeroKnight : MonoBehaviour {
     private float               m_delayToIdle = 0.0f;
     private float               m_rollDuration = 8.0f / 14.0f;
     private float               m_rollCurrentTime;
+    private Health              m_health;
+    private AttackHitbox       m_attackHitbox;
 
 
     // Use this for initialization
@@ -37,6 +39,10 @@ public class HeroKnight : MonoBehaviour {
         m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
+        m_health = GetComponent<Health>();
+        m_health.onHurt.AddListener(OnHurt);
+        m_health.onDeath.AddListener(OnDeath);
+        m_attackHitbox = GetComponentInChildren<AttackHitbox>();
     }
 
     // Update is called once per frame
@@ -60,15 +66,15 @@ public class HeroKnight : MonoBehaviour {
         float inputY = Input.GetAxis("Vertical");
 
         // Swap direction of sprite depending on walk direction
+        
         if (inputX > 0)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            transform.localScale = new Vector3(1, 1, 1);
             m_facingDirection = 1;
         }
-            
         else if (inputX < 0)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
             m_facingDirection = -1;
         }
 
@@ -85,13 +91,13 @@ public class HeroKnight : MonoBehaviour {
         //Death
         if (Input.GetKeyDown("e") && !m_rolling)
         {
-            m_animator.SetBool("noBlood", m_noBlood);
-            m_animator.SetTrigger("Death");
+            m_health.TakeDamage(999);
         }
             
         //Hurt
-        else if (Input.GetKeyDown("q") && !m_rolling)
-            m_animator.SetTrigger("Hurt");
+        else if (Input.GetKeyDown("q") && !m_rolling){
+            m_health.TakeDamage(10);
+        }
 
         //Attack
         else if(Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !m_rolling)
@@ -158,5 +164,28 @@ public class HeroKnight : MonoBehaviour {
                 if(m_delayToIdle < 0)
                     m_animator.SetInteger("AnimState", 0);
         }
+    }
+    
+    void OnHurt()
+    {
+        m_animator.SetTrigger("Hurt");
+    }
+
+    void OnDeath()
+    {
+        m_animator.SetTrigger("Death");
+        m_animator.SetBool("noBlood", m_noBlood);
+    
+        // Disable player input on death
+        this.enabled = false;
+    }
+    void EnableHitbox()
+    {
+        m_attackHitbox.EnableHitbox();
+    }
+
+    void DisableHitbox()
+    {
+        m_attackHitbox.DisableHitbox();
     }
 }
