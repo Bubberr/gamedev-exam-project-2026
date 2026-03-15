@@ -1159,7 +1159,6 @@ GameObject:
   - component: {fileID: 1036899641}
   - component: {fileID: 1036899640}
   - component: {fileID: 1036899639}
-  - component: {fileID: 1036899642}
   m_Layer: 0
   m_Name: Exit_BTN
   m_TagString: Untagged
@@ -1281,22 +1280,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036899637}
   m_CullTransparentMesh: 1
---- !u!111 &1036899642
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036899637}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: c292a338b5f3fe94ea158c6f5c6f90c8, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!1 &1198628276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,7 +1292,6 @@ GameObject:
   - component: {fileID: 1198628281}
   - component: {fileID: 1198628280}
   - component: {fileID: 1198628279}
-  - component: {fileID: 1198628278}
   m_Layer: 0
   m_Name: Back_BTN
   m_TagString: Untagged
@@ -1337,22 +1319,6 @@ RectTransform:
   m_AnchoredPosition: {x: 7, y: -208}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!111 &1198628278
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1198628276}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: c292a338b5f3fe94ea158c6f5c6f90c8, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 1
 --- !u!114 &1198628279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1678,7 +1644,6 @@ GameObject:
   - component: {fileID: 1342425104}
   - component: {fileID: 1342425103}
   - component: {fileID: 1342425102}
-  - component: {fileID: 1342425105}
   m_Layer: 0
   m_Name: Play_BTN
   m_TagString: Untagged
@@ -1800,22 +1765,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342425100}
   m_CullTransparentMesh: 1
---- !u!111 &1342425105
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342425100}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: c292a338b5f3fe94ea158c6f5c6f90c8, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 1
 --- !u!1 &1632919927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2437,7 +2386,6 @@ GameObject:
   - component: {fileID: 2046553367}
   - component: {fileID: 2046553366}
   - component: {fileID: 2046553365}
-  - component: {fileID: 2046553368}
   m_Layer: 0
   m_Name: HowTPLay_BTN
   m_TagString: Untagged
@@ -2571,22 +2519,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046553363}
   m_CullTransparentMesh: 1
---- !u!111 &2046553368
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2046553363}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: c292a338b5f3fe94ea158c6f5c6f90c8, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!1 &2117591367
 GameObject:
   m_ObjectHideFlags: 0
