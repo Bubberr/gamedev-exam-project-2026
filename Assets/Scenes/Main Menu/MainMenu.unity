@@ -992,6 +992,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 1486907569, guid: 38293c96ae07c7f48976804430da2bc0, type: 3}
+  m_Sprite: {fileID: -1369059772, guid: 9b2d415815e1ac243b8357f43a6fb8b7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
