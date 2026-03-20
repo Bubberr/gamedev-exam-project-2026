@@ -25,6 +25,7 @@ public class Health : MonoBehaviour, IAttackable
 
         m_currentHealth -= amount;
         onHurt.Invoke();
+        Debug.Log("Player HP: " + m_currentHealth);
 
         if (m_currentHealth <= 0)
             onDeath.Invoke();
