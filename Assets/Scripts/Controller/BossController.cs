@@ -6,6 +6,8 @@ public class BossController : MonoBehaviour
     private Rigidbody2D m_body2d;
     private Health m_health;
     private AIController m_ai;
+    
+    [SerializeField] int scoreValue = 150;
   
     void Start()
     {
@@ -76,6 +78,9 @@ public class BossController : MonoBehaviour
         m_body2d.linearVelocity = Vector2.zero;
         m_animator.SetTrigger("Death");
         GetComponent<Collider2D>().enabled = false;
+
+        GameManager.Instance.AddScore(scoreValue);
+        
         Destroy(gameObject, 1.5f);
     }
 }
