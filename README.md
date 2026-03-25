@@ -86,8 +86,8 @@ The project is built using Unity’s **component-based architecture**:
 
 ## 👥 Contributors
 
-- Ingridksv
 - Bubberr
+- Ingridksv
 
 ---
 
